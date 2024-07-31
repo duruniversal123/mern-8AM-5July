@@ -1,0 +1,8 @@
+//const fs = require('fs');
+
+//1. writeFile(); :- cretae a new file and write the contents
+//2. readFile(); :- read the file contents
+//3. appendFile(); :- append the file contents in the existing file
+//4. unlink(); :- delete the file
+//5. rmdir(); :- remove the directory/folder
+//6. readDir(); :- read the folder and use o know that how many files inside the folder.
