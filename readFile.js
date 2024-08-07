@@ -5,6 +5,6 @@ fs.readFile("./wednesday.txt",function(err,data){
         console.log("error in reading the file",err)
        }
        else{
-        console.log(`the file data is ${data}`);
+        console.log(`the file data is ${data}`,data.length);
        }
 });
