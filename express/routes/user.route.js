@@ -2,7 +2,19 @@ const express = require("express");
 
 const multer = require("multer");
 
-const upload = multer();
+const fs=require("fs");
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './uploads')
+  },
+  filename: function (req, file, cb) { 
+    cb(null, file.originalname)
+  }
+})
+
+const upload = multer({ storage: storage })
+
 
 const router = express.Router();
 
@@ -83,5 +95,15 @@ router.post("/login", function (req, res) {
     res.send({ message: "user login failed", status: 0 });
   }
 });
+
+
+//request to get image data
+router.get('/user-profile', function(req, res) {
+       fs.readFile('./uploads/Screenshot from 2023-01-07 18-42-40.png',function(err,data){
+        if(data){
+          res.send(data);
+        }
+       });
+})
 
 module.exports = router;
